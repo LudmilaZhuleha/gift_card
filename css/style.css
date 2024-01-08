@@ -1,0 +1,345 @@
+@font-face {
+    font-display: swap; 
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/nunito-v26-cyrillic_latin-regular.woff2') format('woff2'); 
+}
+
+@font-face {
+    font-display: swap; 
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/nunito-v26-cyrillic_latin-700.woff2') format('woff2');
+}
+
+html {
+    box-sizing: border-box;
+}
+*, 
+*::after, 
+*::before {
+    box-sizing: inherit;
+}
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    font-family: Nunito, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -webkit-tap-hightlight-color: rgba(0,0,0,0);
+    -webkit-tap-hightlight-color: transparent;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #221F1F;
+}
+.body--gift {
+    background: #4AA69B url(../img/bg-gift.jpg) center/cover;
+}
+
+.body--congratulation {
+    background: #FE9595 url(../img/bg-congratulations.jpg) center/cover;
+}
+
+.container {
+    max-width: 1260px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.header {
+    padding: 40px 0;
+}
+
+.header__logo { 
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.gift {
+    padding: 20px 0 80px 0;
+}
+.gift__title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 16px 0;
+}
+
+.gift__desc {
+    font-size: 20px;
+    margin: 0 0 16px 0;
+}
+    
+.gift__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 96px;
+}
+.gift__card {
+    max-width: 580px;
+    width: calc(50% - 16px);
+}
+
+.gift__swiper {
+    margin-bottom: 20px;
+}
+.gift__swiper--card {
+    margin-bottom: 20px;
+}
+
+.gift__card-slide {
+    border-radius: 20px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.gift__card-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.gift__card-thumb {
+    width: 72px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.gift__form {
+    max-width: 480px;
+    width: 100%;
+}
+.form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    justify-items: start;
+}
+.form__label {
+    width: 100%;
+}
+.form__label--text {
+    display: block;
+    margin-bottom: 4px;
+    white-space: nowrap;
+}
+.form__field {
+    width: 100%;
+    font: inherit;
+    border-radius: 6px;
+    border: 1px solid #DEDEDE;
+    padding: 8px 16px;
+    outline: none;
+    background-color: #FBFBFB;
+}
+.form__field:hover,
+.form__field:focus-visible,
+.form__field:active {
+    border-color: #999;
+}
+.form__label--textarea {
+    grid: 1/-1;
+    width: 100%;
+}
+
+.form__field--textarea {
+    margin-bottom: 24px;
+    resize: vertical;
+    min-height: 150px;    
+    outline: none;
+}
+.form__button {
+    border-radius: 32px;
+    background-color: #4BAA00;
+    border: 1px solid transparent; 
+    padding: 8px 24px;
+    font-weight: 700;
+    color: #FFFFFF; 
+    cursor: pointer;
+}
+.form__button:hover:not(:disabled) {
+    background-color: #58C601;
+}
+.form__button:focus-visible {
+    background-color: #58C601;
+}
+.form__button:active:not(:disabled) {
+    transform: translate(2px, 2px);
+}
+.form__button:disabled {
+    opacity: 0.4;
+}
+.congratulations__title {
+    margin: 0 0 16px 0;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+}
+.congratulations__desc {
+    margin-bottom: 27px;
+    text-align: center;
+    font-size: 20px;
+}
+.congratulations__card {
+    margin: 0 auto;
+    border-radius: 20px;   
+}
+.card {
+    position: relative;
+    max-width: 580px;
+    height: 375px;
+    perspective: 1000px;
+}
+.card__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    width: 100%;
+    height: 100%;
+}
+.card:hover .card__inner {
+    transform: rotateY(180deg);
+}
+.card__front {
+    display: block;
+    max-width: 580px;
+    height: auto;
+    backface-visibility: hidden;
+    position: absolute;
+    overflow: hidden;
+}
+.card__front--image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+.card__back {
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 32px 32px 153px 32px;
+    border-radius: 20px;
+    background: #FFF;
+    max-width: 580px;
+    height: auto;
+    margin-bottom: 20px;
+}
+.card__title {
+    margin: 0;
+    color: #F44;
+    font-size: 28px;
+    font-weight: 700;
+}
+.card__contacts {
+    margin: 0;
+}
+.card__detail {
+    margin: 0;
+    display: flex;
+    gap: 16px;
+}
+.subtitle {
+    margin-bottom: 8px;
+    opacity: 0.3;
+}
+.card__from {
+    margin-left: 16px;
+}
+.card__to {
+    margin-left: 33px;
+}  
+.card__message {
+    margin: 0;
+    font-size: 20px;
+}
+
+@media (width <= 1080px) {
+    .header {
+        padding: 32px 0 16px;
+    }
+    .gift {
+        padding: 16px 0 32px;
+    } 
+    .gift__title {
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+    .gift__desc {
+        font-size: 16px;
+        margin-bottom: 24px; 
+    }
+    .gift__card {
+        max-width: 464px;
+        width: 100%;
+        padding-top: 8px;
+    }
+    .form {
+        row-gap: 12px;
+    }
+}
+
+@media (width <= 980px) {
+    .container {
+        padding: 44px;
+    }
+    .gift__wrapper {
+        flex-wrap: wrap;
+    }
+    .gift__form {
+        max-width: 100%;
+    }
+}
+@media (width <= 580px) {
+    .container {
+        padding: 16px;
+    }
+    .header {
+        padding-top: 16px;
+    }
+    .form {
+        grid-template-columns: 1fr;
+    }
+    .gift__wrapper {
+        gap: 50px;
+    }
+    .gift__card-thumb {
+        width: 56px;
+        border-radius: 4px;
+    }.card {
+        width: 288px;
+        height: calc((186 / 288 * 100vw) - 20px);
+        margin-bottom: 20px;
+    }
+    .card__back {
+        padding: 24px;
+    }
+    .card__title {
+        font-size: 20px;
+    }
+    
+    .card__message, .card__to, .card__from, .card__subtitle {
+        font-size: 16px;
+    }
+    .congratulations__title {
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+    .congratulations__desc {
+        font-size: 16px;
+        margin-bottom: 32px;
+    }
+    .card__subtitle {
+        opacity: 0.5;
+    }
+}
