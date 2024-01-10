@@ -50,7 +50,8 @@ const init = async () => {
             cardImage.src = `img/${data.card}.jpg`
             cardFrom.textContent = data.sender_name;
             cardTo.textContent = data.receiver_name;
-            cardMessage.textContent = data.message;
+            const formattedMessage = data.message.replace('/\n/', '<br>');
+            cardMessage.innerHTML = formattedMessage;
 
         }
     }

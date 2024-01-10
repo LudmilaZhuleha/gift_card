@@ -46,11 +46,11 @@ body {
 .container {
     max-width: 1260px;
     margin: 0 auto;
-    padding: 40px;
+    padding: 15px 40px 0 20px;
 }
 
 .header {
-    padding: 40px 0;
+    padding: 40px 0 0 0;
 }
 
 .header__logo { 
@@ -65,7 +65,7 @@ body {
 .gift__title {
     font-size: 32px;
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.2; 
     margin: 0 0 16px 0;
 }
 
@@ -231,7 +231,7 @@ body {
     padding: 32px 32px 153px 32px;
     border-radius: 20px;
     background: #FFF;
-    max-width: 580px;
+    width: 580px;
     height: auto;
     margin-bottom: 20px;
 }
@@ -317,12 +317,13 @@ body {
         width: 56px;
         border-radius: 4px;
     }.card {
-        width: 288px;
+        max-width: 288px;
         height: calc((186 / 288 * 100vw) - 20px);
         margin-bottom: 20px;
     }
     .card__back {
         padding: 24px;
+        width: 288px;
     }
     .card__title {
         font-size: 20px;
